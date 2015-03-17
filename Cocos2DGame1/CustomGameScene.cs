@@ -8,13 +8,19 @@ namespace Cocos2DGame1
 {
     class CustomGameScene : CCScene
     {
+		public CCLayer layer;
+		public CCSprite sprite;
+		public CCSprite ball;
+		public CCLabelTTF scoreLabel;
+
 		public CustomGameScene()
 		{
-			CCLayerColor layer = new CCLayerColor();
+			layer = new CCLayerColor();
 			AddChild(layer);
 
 			#region creating the platform
-			CCSprite sprite = new CCSprite(new CCRect(0, 0, 100, 20));
+
+			sprite = new CCSprite(new CCRect(0, 0, 100, 20));
 			sprite.Color = CCColor3B.Blue;
 
 			layer.AddChild(sprite);
@@ -31,7 +37,7 @@ namespace Cocos2DGame1
 			
 			#region creating the ball
 
-			CCSprite ball = new CCSprite(new CCRect(0, 0, 15, 15));
+			ball = new CCSprite(new CCRect(0, 0, 15, 15));
 			ball.Color = CCColor3B.Green;
 			
 			layer.AddChild(ball);
@@ -44,10 +50,19 @@ namespace Cocos2DGame1
 			ball.Position = upperRegion;
 			
 			#endregion
+
+
+			#region creating the score field
+
+			scoreLabel = new CCLabelTTF("Score: 0", "MarkerFelt", 22);
 			
+			scoreLabel.PositionX = layer.WorldBoundingBox.MinX + 20;
+			scoreLabel.PositionY = layer.WorldBoundingBox.MaxY - 20;
+			scoreLabel.AnchorPoint = CCPoint.AnchorUpperLeft;
 			
-			layer.Color = CCColor3B.Black;
-			layer.Opacity = 255;
+			layer.AddChild(scoreLabel);
+
+			#endregion
 		}
     }
 }
