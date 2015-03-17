@@ -7,10 +7,8 @@ namespace Cocos2DGame1
 {
 	public class AppDelegate : CCApplication
 	{
-
 		int preferredWidth;
 		int preferredHeight;
-
 		public AppDelegate(Game game, GraphicsDeviceManager graphics)
 			: base(game, graphics)
 		{
@@ -98,5 +96,7 @@ namespace Cocos2DGame1
 			//CCSimpleAudioEngine.SharedEngine.PauseBackgroundMusic = false;
 
 		}
+
+
 	}
 }

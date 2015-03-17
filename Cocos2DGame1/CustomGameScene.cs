@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cocos2D;
+using CocosDenshion;
 
 namespace Cocos2DGame1
 {
     class CustomGameScene : CCScene
     {
+		
+
 		public CCLayer layer;
 		public CCSprite sprite;
 		public CCSprite ball;
